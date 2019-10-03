@@ -10,7 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "amqplib": "^0.5.5",
+<<<<<<< HEAD
     "minimist": "^1.2.0",
+=======
+>>>>>>> a36b5cc587a1890b2b8071769ddce78e749ba6ff
     "request": "^2.88.0"
   }
 }

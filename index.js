@@ -10,19 +10,11 @@ let queues = [];
 let writeStream = fs.createWriteStream(path_log+filename,{flags:'a'});
 console.log("create log on performance monitoring");
 writeStream.write("[");
-=======
-let host = "http://localhost:15672/api/queues"
-let path_log = "./log/"
-let filename = "cek.log"
-let queues = [];
-let writeStream = fs.createWriteStream(path_log+filename,{flags:'a'});
-console.log("create log on performance monitoring");
->>>>>>> a36b5cc587a1890b2b8071769ddce78e749ba6ff
+
 setInterval(()=>{
     console.log("checking...");
     request(host,{'auth':{'user':'guest','pass':'guest'}}, (err,req,body)=>{
         if (err) throw err;
-<<<<<<< HEAD
         datax = JSON.parse(req.body);
         if(!datax.hasOwnProperty("error")){
             writeStream.write("\n[");
@@ -45,21 +37,13 @@ setInterval(()=>{
             writeStream.write("]");
             writeStream.write(",");   
         }
-=======
-        writeStream.write(req.body);
-        writeStream.write(",\n");   
->>>>>>> a36b5cc587a1890b2b8071769ddce78e749ba6ff
         // console.log(JSON.stringify(req));
     })
     // request(host).pipe(writeStream);
     console.log("ok");
-<<<<<<< HEAD
 }, 1000)
 process.on("SIGINT", async ()=>{
     console.log("Gracefully shutdown on keyboard interruption");
     await writeStream.write("]");
     process.exit();
 })
-=======
-}, 5000)
->>>>>>> a36b5cc587a1890b2b8071769ddce78e749ba6ff

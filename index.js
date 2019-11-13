@@ -1,7 +1,6 @@
 let request = require("request");
 let fs = require("fs");
 
-<<<<<<< HEAD
 let host = "http://localhost:15672/api/queues/"
 let path_log = "./log/"
 let now = new Date()
